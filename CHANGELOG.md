@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.3...v0.1.4) (2022-12-14)
+
+### Bug Fixes
+
+- remove unused import ([c63f604](https://github.com/LouisMazel/docker-adonis-mailer/commit/c63f604c0e88c04655f8292428d29a25112c7333))
+
+## [0.1.4](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.3...v0.1.4) (2022-12-14)
+
+### Bug Fixes
+
+- remove unused import ([c63f604](https://github.com/LouisMazel/docker-adonis-mailer/commit/c63f604c0e88c04655f8292428d29a25112c7333))
+
 ## [0.1.3](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.2...v0.1.3) (2022-12-14)
 
 ### Bug Fixes
