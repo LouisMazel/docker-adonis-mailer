@@ -1,5 +1,6 @@
 import Mail, { BaseMailer, MessageContract } from '@ioc:Adonis/Addons/Mail'
 import Env from '@ioc:Adonis/Core/Env'
+import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
 import View from '@ioc:Adonis/Core/View'
 import mjml from 'mjml'
 
@@ -30,14 +31,24 @@ export default class TransactionalEmail extends BaseMailer {
   public async prepare(message: MessageContract) {
     const html = await this.getHtml()
 
+    const fromEmail = this.options.fromEmail ?? Env.get('SENDER_MAIL')
+    const fromName = this.options.fromName ?? Env.get('SENDER_NAME')
+
+    if (!fromEmail) {
+      throw new Error('No sender e-mail provided')
+    }
+
     const email = message
-      .from(this.options.fromEmail, this.options.fromName)
+      .from(fromEmail, fromName)
       .to(this.options.toEmail, this.options.toName)
       .subject(this.options.subject)
       .encoding('utf-8')
 
-    if (this.options.replyToEmail) {
-      email.replyTo(this.options.replyToEmail, this.options.replyToName)
+    const replyToEmail = this.options.replyToEmail ?? Env.get('REPLY_TO_MAIL')
+    const replyToName = this.options.replyToName ?? Env.get('REPLY_TO_NAME')
+
+    if (replyToEmail) {
+      email.replyTo(replyToEmail, replyToName)
     }
 
     return email.html(html)

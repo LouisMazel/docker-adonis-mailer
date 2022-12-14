@@ -5,7 +5,7 @@ export default class SendMissionEmailValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    fromEmail: schema.string({ trim: true }, [rules.email()]),
+    fromEmail: schema.string.optional({ trim: true }, [rules.email()]),
     fromName: schema.string.optional({ trim: true }),
     toEmail: schema.string({ trim: true }, [rules.email()]),
     toName: schema.string.optional({ trim: true }),

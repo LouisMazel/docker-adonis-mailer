@@ -1,8 +1,8 @@
 export interface MailBody {
-  fromEmail: string
   toEmail: string
   subject: string
   mjml?: boolean
+  fromEmail?: string
   fromName?: string
   toName?: string
   replyToEmail?: string

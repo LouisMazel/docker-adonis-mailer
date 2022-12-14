@@ -36,8 +36,8 @@ export default Env.rules({
   MAILGUN_BASE_URL: Env.schema.string.optional(),
   MAILGUN_DOMAIN: Env.schema.string.optional(),
 
-  SENDER_MAIL: Env.schema.string(),
-  SENDER_NAME: Env.schema.string(),
-  REPLY_TO_MAIL: Env.schema.string(),
-  REPLY_TO_NAME: Env.schema.string(),
+  SENDER_MAIL: Env.schema.string.optional(),
+  SENDER_NAME: Env.schema.string.optional(),
+  REPLY_TO_MAIL: Env.schema.string.optional(),
+  REPLY_TO_NAME: Env.schema.string.optional(),
 })
