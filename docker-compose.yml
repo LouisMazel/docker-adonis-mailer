@@ -2,24 +2,20 @@ version: '3.8'
 
 services:
   api:
+    restart: always
     extends:
       file: docker-compose.prod.yml
       service: api
     build:
+      context: .
       target: dependencies
+      args:
+        - NODE_IMAGE=node:18-alpine3.15
     ports:
+      - 3333:3333
       - 9229:9229
     env_file:
       - .env.local
-    # environment:
-    #   - MAIL_DRIVER=mailgun
-    #   - MAILGUN_API_KEY=test
-    #   - MAILGUN_DOMAIN=mail.loicmazuel.com
-    #   - MAILGUN_BASE_URL=https://api.eu.mailgun.net/v3
-    #   - SENDER_MAIL=me@loicmazuel.com
-    #   - SENDER_NAME="Team EspaceSingulier"
-    #   - REPLY_TO_MAIL=me@loicmazuel.com
-    #   - REPLY_TO_NAME="Team EspaceSingulier"
     volumes:
       - ./:/app
       - /app/node_modules
