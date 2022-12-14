@@ -27,6 +27,9 @@ format: ## format files by prettier
 check-update: ## check dependencies updates
 	pnpm update --interactive --latest
 
+release: ## check dependencies updates
+	pnpm lerna:version $(type)
+
 # DOCKER
 
 docker-install: ## install dependencies in container
@@ -38,10 +41,10 @@ docker-up: ## run container
 docker-up-build: ## run and build docker
 	docker-compose up --build --remove-orphans -d
 
-docker-build: ## run and build docker
+docker-build: ## build docker for dev
 	docker-compose build
 
-docker-build-prod: ## run and build docker
+docker-build-prod: ## build docker for prod
 	docker-compose -f docker-compose.prod.yml build
 
 docker-start: ## init docker container
