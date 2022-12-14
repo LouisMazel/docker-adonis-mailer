@@ -12,6 +12,7 @@ version: '3.8'
 services:
   mailer:
     container_name: mailer
+    image: adonis-docker-mailer
     ports:
       - 3333:3333
       # - 9229:9229 DEBUG port

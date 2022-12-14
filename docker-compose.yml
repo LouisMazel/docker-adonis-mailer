@@ -1,11 +1,10 @@
 version: '3.8'
 
 services:
-  mailer:
-    container_name: mailer
+  api:
     extends:
       file: docker-compose.prod.yml
-      service: mailer
+      service: api
     build:
       target: dependencies
     ports:

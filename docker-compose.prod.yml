@@ -1,15 +1,8 @@
 version: '3.8'
 
 services:
-  mailer:
-    container_name: mailer
+  api:
     restart: always
     build:
       context: .
       target: production
-      args:
-        - NODE_IMAGE=node:18-alpine3.15
-    ports:
-      - 3333:3333
-    volumes:
-      - ./:/app
