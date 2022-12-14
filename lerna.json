@@ -1,7 +1,6 @@
 {
   "packages": ["."],
   "loglevel": "verbose",
-  "version": "independent",
   "yes": false,
   "changelogPreset": "conventionalcommits",
   "command": {
