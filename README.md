@@ -93,6 +93,14 @@ node ace make:controller <% ControllerName %>
 
 ### Docker
 
+#### Build and start dev server
+
+You should use this command when the container isn't already initialized
+
+```bash
+make docker-up-build
+```
+
 #### Start dev server in container
 
 ```bash
