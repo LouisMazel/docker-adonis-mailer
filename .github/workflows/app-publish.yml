@@ -19,16 +19,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Extract metadata (tags) for Docker
+      - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: louismazel/mailer
 
-      - name: Build Docker image
-        run: docker-compose -f docker-compose.prod.yml build
-
-      - name: Push Docker image
-        run: |
-          docker tag mailer_api louismazel/mailer:${{ steps.meta.outputs.tags }}
-          docker push louismazel/mailer:${{ steps.meta.outputs.tags }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          target: production
