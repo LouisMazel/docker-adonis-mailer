@@ -1,6 +1,5 @@
 import Mail, { BaseMailer, MessageContract } from '@ioc:Adonis/Addons/Mail'
 import Env from '@ioc:Adonis/Core/Env'
-import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
 import View from '@ioc:Adonis/Core/View'
 import mjml from 'mjml'
 
