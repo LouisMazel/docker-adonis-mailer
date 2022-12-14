@@ -1,0 +1,21 @@
+name: App Test Build
+
+on:
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+
+jobs:
+  app-test-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Copy env file
+        run: cp .env.example .env
+
+      - name: Docker Build
+        run: docker-compose -f docker-compose.prod.yml build

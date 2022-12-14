@@ -1,0 +1,15 @@
+{
+  "packages": ["packages/*"],
+  "loglevel": "verbose",
+  "version": "independent",
+  "yes": false,
+  "changelogPreset": "conventionalcommits",
+  "command": {
+    "version": {
+      "allowBranch": ["master"],
+      "message": "chore: bump version to %s",
+      "conventionalCommits": true
+    }
+  },
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
+}

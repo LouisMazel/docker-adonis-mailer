@@ -1,0 +1,33 @@
+name: App Test Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+
+jobs:
+  app-test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Actions
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.json') }}
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install modules
+        run: pnpm install
+
+      - name: Run linters
+        run: pnpm lint
