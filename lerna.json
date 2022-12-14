@@ -6,7 +6,7 @@
   "changelogPreset": "conventionalcommits",
   "command": {
     "version": {
-      "allowBranch": ["master"],
+      "allowBranch": ["main"],
       "message": "chore: bump version to %s",
       "conventionalCommits": true
     }
