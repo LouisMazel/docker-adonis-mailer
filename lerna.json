@@ -1,5 +1,4 @@
 {
-  "packages": ["packages/*"],
   "loglevel": "verbose",
   "version": "independent",
   "yes": false,
