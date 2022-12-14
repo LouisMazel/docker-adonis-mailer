@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.2...v0.1.3) (2022-12-14)
+
+### Bug Fixes
+
+- make pino-pretty as dependency ([80292c3](https://github.com/LouisMazel/docker-adonis-mailer/commit/80292c3c01d212899548091b8c7a58d40b5a0bb9))
+
+## [0.1.3](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.2...v0.1.3) (2022-12-14)
+
+### Bug Fixes
+
+- make pino-pretty as dependency ([80292c3](https://github.com/LouisMazel/docker-adonis-mailer/commit/80292c3c01d212899548091b8c7a58d40b5a0bb9))
+
 ## [0.1.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.1...v0.1.2) (2022-12-14)
 
 **Note:** Version bump only for package adonis-docker-mailer
