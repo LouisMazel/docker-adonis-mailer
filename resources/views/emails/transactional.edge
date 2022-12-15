@@ -2,7 +2,7 @@
   <mj-head>
     <mj-attributes>
       <mj-all font-family="'IBM Plex Sans', 'Georgia', 'Times New Roman', serif" />
-      <mj-text font-size="18px" color="#5C5C5C" line-height="2" padding="0" />
+      <mj-text font-size="18px" color="{{ textColor }}" line-height="2" padding="0" />
     </mj-attributes>
     <mj-font href="https://fonts.googleapis.com/css?family=DM+Serif+Display:normal,italic,bold&display=swap"
       name="DM Serif Display" />
@@ -18,16 +18,14 @@
 
     <mj-section background-color="#FFFFFF" border-radius="24px" padding="48px">
       <mj-column>
-        <mj-text color="#218e9e" font-size="32px" line-height="1.25" padding-bottom="20px"
+        @if(title)
+        <mj-text color="{{ titleColor }}" font-size="32px" line-height="1.25" padding-bottom="20px"
           font-family="'DM Serif Display', 'Georgia', 'Times New Roman', serif">
           <strong>
-            @if(firstname)
-            Bonjour {{ firstname }},
-            @else
-            Bonjour,
-            @endif
+            {{ title }},
           </strong>
         </mj-text>
+        @endif
 
         @if(content)
         <mj-text>
