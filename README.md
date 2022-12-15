@@ -15,6 +15,8 @@ services:
   mailer:
     restart: always
     image: louismazel/mailer:v1.0.0
+    ports:
+      - 3333:3333 # or PORT choosen
     env_file:
       - .env
     # optional
