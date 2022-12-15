@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.1.7 (2022-12-15)</small>
+
+- chore: edit lerna config ([6e5e559](https://github.com/LouisMazel/docker-adonis-mailer/commit/6e5e559))
+- chore: edit lerna config changelog preset ([3be1d34](https://github.com/LouisMazel/docker-adonis-mailer/commit/3be1d34))
+- chore: remove commitlint-config-cz dep ([d9cd7f5](https://github.com/LouisMazel/docker-adonis-mailer/commit/d9cd7f5))
+
+## <small>0.1.7 (2022-12-15)</small>
+
+- chore: edit lerna config ([6e5e559](https://github.com/LouisMazel/docker-adonis-mailer/commit/6e5e559))
+- chore: edit lerna config changelog preset ([3be1d34](https://github.com/LouisMazel/docker-adonis-mailer/commit/3be1d34))
+- chore: remove commitlint-config-cz dep ([d9cd7f5](https://github.com/LouisMazel/docker-adonis-mailer/commit/d9cd7f5))
+
 ## [0.1.6](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.5...v0.1.6) (2022-12-15)
 
 **Note:** Version bump only for package adonis-docker-mailer
