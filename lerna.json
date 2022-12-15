@@ -6,11 +6,9 @@
     "version": {
       "allowBranch": ["main"],
       "message": "chore: bump version to %s",
-      "conventionalCommits": true,
-      "noPush": true,
-      "noGitTagVersion": true
+      "conventionalCommits": true
     }
   },
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "0.1.6"
+  "version": "0.1.5"
 }
