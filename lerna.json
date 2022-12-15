@@ -6,7 +6,8 @@
     "version": {
       "allowBranch": ["main"],
       "message": "chore: bump version to %s",
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "changelogPreset": "eslint"
     }
   },
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
