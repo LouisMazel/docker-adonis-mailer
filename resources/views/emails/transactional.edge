@@ -28,196 +28,19 @@
             @endif
           </strong>
         </mj-text>
-        <mj-text color="#333333" font-size="26px" line-height="1.25" padding-bottom="20px"
-          font-family="'DM Serif Display', 'Georgia', 'Times New Roman', serif">
-          <strong>Tout bon relayeur est un relayeur bien informé !</strong>
-        </mj-text>
 
+        @if(content)
         <mj-text>
-          Voici donc toutes les informations qui vous seront nécessaires
+          {{{ content }}}
         </mj-text>
-      </mj-column>
-    </mj-section>
-
-    <mj-section padding="0px">
-      <mj-column>
-        <mj-spacer height="48px"></mj-spacer>
-      </mj-column>
-    </mj-section>
-
-    @if(hma)
-
-    <mj-section background-color="#FFFFFF" border-radius="24px" padding="48px">
-      <mj-column>
-        <mj-text color="#218e9e" font-size="24px" padding="0px" padding-bottom="16px" line-height="1.5"
-          font-family="'DM Serif Display', 'Georgia', 'Times New Roman', serif">
-          <strong>Bénéficiaire</strong>
-        </mj-text>
-
-        <mj-text color="#333333">
-          <strong>Nom et Prénom :</strong> {{ hma.fullName }}
-        </mj-text>
-        @if(hma.phoneNumber)
-        <mj-text color="#333333">
-          <strong>Tel :</strong> {{ hma.phoneNumber }} (à composer en numéro masqué #31#)
-        </mj-text>
-        @endif
-        @if(hma.age)
-        <mj-text color="#333333">
-          <strong>Âge :</strong> {{ hma.age }}
-        </mj-text>
-        @endif
-        @if(hma.comment)
-        <mj-divider padding="24px 0" border-width="1px" border-style="dashed" border-color="lightgrey" />
-
-        <mj-text color="#333333">
-          <strong>Commentaire :</strong>
-        </mj-text>
-        <mj-text padding="0px"> {{ hma.comment }} </mj-text>
         @endif
       </mj-column>
-    </mj-section>
-
-    <mj-section padding="0px">
-      <mj-column>
-        <mj-spacer height="24px"></mj-spacer>
-      </mj-column>
-    </mj-section>
-
-    @endif
-
-    @if(professional)
-
-    <mj-section background-color="#FFFFFF" border-radius="24px" padding="48px">
-      <mj-column>
-        <mj-text color="#218e9e" font-size="24px" padding="0px" line-height="1.5" padding-bottom="16px"
-          font-family="'DM Serif Display', 'Georgia', 'Times New Roman', serif">
-          <strong>Professionnel</strong>
-        </mj-text>
-
-        <mj-text color="#333333">
-          <strong>Nom et Prénom :</strong> {{ professional.fullName }}
-        </mj-text>
-        @if(professional.address)
-        <mj-text color="#333333">
-          <strong>Adresse :</strong> {{ professional.address }}
-        </mj-text>
-        @endif
-
-        @if(professional.phoneNumber)
-        <mj-text color="#333333">
-          <strong>Tel :</strong> {{ professional.phoneNumber }}
-        </mj-text>
-        @endif
-
-        @if(professional.comment)
-        <mj-divider padding="24px 0" border-width="1px" border-style="dashed" border-color="lightgrey" />
-
-        <mj-text color="#333333">
-          <strong>Commentaire :</strong>
-        </mj-text>
-        <mj-text padding="0px"> {{ professional.comment }} </mj-text>
-        @endif
-      </mj-column>
-    </mj-section>
-
-    <mj-section padding="0px">
-      <mj-column>
-        <mj-spacer height="24px"></mj-spacer>
-      </mj-column>
-    </mj-section>
-
-    @endif
-
-    @if(event)
-
-    <mj-section background-color="#FFFFFF" border-radius="24px" padding="48px">
-      <mj-column>
-        <mj-text color="#218e9e" font-size="24px" padding-bottom="16px" line-height="1.5"
-          font-family="'DM Serif Display', 'Georgia', 'Times New Roman', serif">
-          <strong>Mission</strong>
-        </mj-text>
-
-        <mj-text color="#333333">
-          <strong>Date :</strong> {{ event.date }}
-        </mj-text>
-        <mj-text color="#333333">
-          <strong>Heure de début du RDV :</strong> {{ event.time }}
-        </mj-text>
-        <mj-text color="#333333">
-          <strong>Durée :</strong> {{ event.duration }}
-        </mj-text>
-
-        <mj-divider padding="24px 0" border-width="1px" border-style="dashed" border-color="lightgrey" />
-
-        <mj-text color="#333333">
-          <strong>Départ :</strong> {{ event.departure }}
-        </mj-text>
-        <mj-text color="#333333">
-          <strong>Arrivée :</strong> {{ event.arrival }}
-        </mj-text>
-        @if(event.dropOff)
-        <mj-text color="#333333">
-          <strong>Retour :</strong> {{ event.dropOff }}
-        </mj-text>
-        @endif
-
-        @if(event.comment)
-        <mj-divider padding="24px 0" border-width="1px" border-style="dashed" border-color="lightgrey" />
-
-        <mj-text color="#333333">
-          <strong>Commentaire :</strong>
-        </mj-text>
-        <mj-text padding="0px"> {{ event.comment }} </mj-text>
-        @endif
-      </mj-column>
-    </mj-section>
-
-
-    <mj-section padding="0px">
-      <mj-column>
-        <mj-spacer height="48px"></mj-spacer>
-      </mj-column>
-    </mj-section>
-
-    @endif
-
-    <mj-section background-color="#FFFFFF" border-radius="24px" padding="48px">
-      <mj-column>
-        <mj-text color="#218e9e" font-size="28px" line-height="1.25" padding-bottom="20px"
-          font-family="'DM Serif Display', 'Georgia', 'Times New Roman', serif">
-          <strong>Merci de votre engagement !</strong>
-        </mj-text>
-
-        @if(extraContent)
-        <mj-text>
-          {{{ extraContent }}}
-        </mj-text>
-        @endif
-
-        <mj-text>N’hésitez pas à revenir vers nous pour toute autre question.</mj-text>
-
-        <mj-text padding-bottom="16px">À bientôt,</mj-text>
-        <mj-text>
-          La coordinatrice : Hélène Boiré, 07 70 77 33 93
-          <br />
-          En cas d'absence, contacter le 0805 38 14 14
-        </mj-text>
     </mj-section>
 
 
     <mj-section padding="48px">
       <mj-column>
-        <mj-image align="left" padding="0px"
-          src="https://static.wixstatic.com/media/e9ed36_69672435ed3a42bfb34474d40260b156~mv2.png/v1/crop/x_114,y_213,w_979,h_628/fill/w_297,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e9ed36_69672435ed3a42bfb34474d40260b156~mv2.png"
-          width="134px"></mj-image>
-      </mj-column>
-      <mj-column>
-        <mj-social font-size="15px" align="right" icon-size="30px" mode="horizontal" padding="0px">
-          <mj-social-element src="https://cdn.getvero.com/dd-editor/ui-assets/icons/social/facebook.png"
-            alt="https://www.facebook.com/" href="https://www.facebook.com/espacesingulier/" name="facebook-noshare">
-          </mj-social-element>
-        </mj-social>
+        <mj-image align="left" padding="0px" href="{{ logoLink }}" src="{{ logoSrc }}" width="134px"></mj-image>
       </mj-column>
     </mj-section>
   </mj-body>

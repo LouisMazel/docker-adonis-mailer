@@ -14,11 +14,11 @@ export default class MailerController {
 
       const body = request.body() as MailBody
 
-      const response = await new TransactionalEmail(body).send()
+      const emailResponse = await new TransactionalEmail(body).send()
 
       Logger.info('Email sent with success')
 
-      return response
+      return emailResponse
     } catch (error) {
       const errorMessage = error.message ?? error
 
