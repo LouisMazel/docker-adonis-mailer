@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.1...v1.2.2) (2022-12-15)
+
+### Bug Fixes
+
+- use body from request ([a0a7cbc](https://github.com/LouisMazel/docker-adonis-mailer/commit/a0a7cbc442f66795292348f8d62a0cdb3e87fcf9))
+
+## [1.2.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.1...v1.2.2) (2022-12-15)
+
+### Bug Fixes
+
+- use body from request ([a0a7cbc](https://github.com/LouisMazel/docker-adonis-mailer/commit/a0a7cbc442f66795292348f8d62a0cdb3e87fcf9))
+
 ## [1.2.1](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.0...v1.2.1) (2022-12-15)
 
 **Note:** Version bump only for package docker-adonis-mailer
