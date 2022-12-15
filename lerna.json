@@ -2,7 +2,6 @@
   "packages": ["."],
   "loglevel": "verbose",
   "yes": false,
-  "changelogPreset": "conventionalcommits",
   "command": {
     "version": {
       "allowBranch": ["main"],
