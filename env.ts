@@ -26,6 +26,8 @@ export default Env.rules({
 
   MAIL_DRIVER: Env.schema.enum(['mailgun', 'smtp'] as const),
 
+  CORS_ORIGIN: Env.schema.string.optional(),
+
   SMTP_HOST: Env.schema.string.optional({ format: 'host' }),
   SMTP_PORT: Env.schema.number.optional(),
   SMTP_SECURE: Env.schema.boolean.optional(),

@@ -1,6 +1,6 @@
 # docker-adonis-mailer
 
-> Dockerized Adonis application to send e-mails
+> Dockerized Adonis application to send e-mails with MJML
 
 ## Usage
 
@@ -22,10 +22,6 @@ services:
     # optional
     volumes:
       - ./src/emails:/app/resources/views/emails
-    build:
-      context: .
-      args:
-        - NODE_IMAGE=node:18-alpine3.15 # to change the NodeJS image to used
 ```
 
 ### Environment variables file
@@ -35,6 +31,8 @@ services:
 ```dosini
 PORT=<port> # required
 HOST=<host> # default 0.0.0.0
+
+CORS_ORIGIN="*" # optional - string only - if not provided, only the current origin where the image is running is allowed
 
 MAIL_DRIVER=<mail_driver> # required - mailgun or smtp
 
@@ -57,6 +55,22 @@ REPLY_TO_MAIL=<reply_to_mail> # optional
 REPLY_TO_NAME=<reply_to_name> # optional
 ```
 
+#### CORS Origin configuration
+
+You can control the origins to allow for the CORS request using the CORS_ORIGIN environment variables.
+This property controls [the Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) header.
+
+Should be a string, examples:
+
+- `"*"` - _Allow all origin_
+- `"*.example.com"` - _Allow all subdomain of example.com_
+- `"example.com"` - _Allow only requests from exemple.com_
+- `"example-1.com,example-2.com"` - _Allow requests from example-1.com and example-2.com_
+- etc...
+
+**Documentation**
+[Adonis documentation - Allowed origin](https://docs.adonisjs.com/guides/security/cors#allowed-origin)
+
 ### Sending e-mail
 
 You should send a `POST` request to `/emails/send`
@@ -67,15 +81,24 @@ Request body:
 
 ```js
 const body = {
-  fromEmail: 'me@example.com', // required if SENDER_MAIL environment variable is not set
-  fromName: 'Team Example', // optional or equal to SENDER_NAME
-  toEmail: 'user@example.com', // required
-  toName: 'User Name', // optional
-  replyToEmail: 'reply@example.com', // optional or equal to REPLY_TO_MAIL
-  replyToName: 'Team Example', // optional or equal to REPLY_TO_NAME
-  subject: 'Subject of the e-mail', // required
-  mjml: true, // default true - if false you should provide a template written in HTML in edge file
-  template: 'example', // file name of your e-mail template - required if you use custom template
+  // required if SENDER_MAIL environment variable is not set
+  fromEmail: 'me@example.com',
+  // optional or equal to SENDER_NAME
+  fromName: 'Team Example',
+  // required
+  toEmail: 'user@example.com',
+  // optional
+  toName: 'User Name',
+  // optional or equal to REPLY_TO_MAIL
+  replyToEmail: 'reply@example.com',
+  // optional or equal to REPLY_TO_NAME
+  replyToName: 'Team Example',
+  // required
+  subject: 'Subject of the e-mail',
+  // default true - if false you should provide a template written in HTML in edge file
+  mjml: true,
+  // file name of your e-mail template - required if you use custom template
+  template: 'example',
 }
 ```
 
@@ -151,13 +174,19 @@ The default template:
 
 ```js
 const body = {
-  title: 'Hello World,', // name of the user
-  logoLink: 'https://adonisjs.com/', // link open on logo click
+  // Title in the e-mail
+  title: 'Hello World,',
+  // link open on logo click
+  logoLink: 'https://adonisjs.com/',
+  // URL of the logo
   logoSrc:
-    'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67', // url of your logo
-  textColor: '#1a1a19', // text color of e-mail
-  titleColor: '#5a45ff', // title text color
-  content: '<p style="margin: 0">E-mail content</p>', // content of e-mail, can be written in HTML
+    'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67',
+  // text color of e-mail
+  textColor: '#1a1a19',
+  // title text color
+  titleColor: '#5a45ff',
+  // content of e-mail, can be written in HTML
+  content: '<p style="margin: 0">E-mail content</p>',
 }
 ```
 
