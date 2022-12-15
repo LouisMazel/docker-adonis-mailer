@@ -10,7 +10,6 @@
     "lint": "cross-env NODE_ENV=production eslint . --ext=.ts",
     "format": "prettier --write .",
     "lerna:version": "npx lerna version",
-    "lerna:changelog": "npx lerna changelog --preset atom",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
