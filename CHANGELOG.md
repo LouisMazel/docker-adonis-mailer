@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0 (2022-12-15)
+
+- feat: generic transactional email ([19d4f07](https://github.com/LouisMazel/docker-adonis-mailer/commit/19d4f07))
+
+## 1.0.0 (2022-12-15)
+
+- feat: generic transactional email ([19d4f07](https://github.com/LouisMazel/docker-adonis-mailer/commit/19d4f07))
+
 ## <small>0.1.8 (2022-12-15)</small>
 
 - refactor: dockerfile volume declaration ([3e5f61e](https://github.com/LouisMazel/docker-adonis-mailer/commit/3e5f61e))
