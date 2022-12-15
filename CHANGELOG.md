@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.1.1...v1.1.2) (2022-12-15)
+
+### Bug Fixes
+
+- set HOST default env vars ([ba0f324](https://github.com/LouisMazel/docker-adonis-mailer/commit/ba0f32469107b953d862ee25d8409f6af0e3b111))
+
+## [1.1.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.1.1...v1.1.2) (2022-12-15)
+
+### Bug Fixes
+
+- set HOST default env vars ([ba0f324](https://github.com/LouisMazel/docker-adonis-mailer/commit/ba0f32469107b953d862ee25d8409f6af0e3b111))
+
 ## [1.1.1](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.1.0...v1.1.1) (2022-12-15)
 
 ### Bug Fixes
