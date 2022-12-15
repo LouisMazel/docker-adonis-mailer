@@ -23,6 +23,7 @@ FROM base AS production
 ENV NODE_ENV=production
 ENV DRIVE_DISK=local
 ENV PORT=$PORT
+ENV HOST=0.0.0.0
 ENV APP_KEY=0TiFrBfnMMnCLiU659a8_zCxxC9AHbZg
 ENV APP_NAME=docker-adonis-mailer
 
