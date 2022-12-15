@@ -14,7 +14,6 @@ specifiers:
   '@types/proxy-addr': ^2.0.0
   '@types/source-map-support': ^0.5.6
   adonis-preset-ts: ^2.1.0
-  commitlint-config-cz: ^0.13.3
   cross-env: ^7.0.3
   eslint: ^8.29.0
   eslint-config-prettier: ^8.5.0
@@ -54,7 +53,6 @@ devDependencies:
   '@types/proxy-addr': 2.0.0
   '@types/source-map-support': 0.5.6
   adonis-preset-ts: 2.1.0
-  commitlint-config-cz: 0.13.3
   cross-env: 7.0.3
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0_eslint@8.29.0
@@ -3455,14 +3453,6 @@ packages:
       - openapi-types
     dev: true
 
-  /app-root-path/3.0.0:
-    resolution:
-      {
-        integrity: sha512-qMcx+Gy2UZynHjOHOIXPNvpf+9cjvk3cWrBBK7zg4gH9+clobJRb9NGzcT7mQTcV/6Gm/1WelUtqxVXnNlrwcw==,
-      }
-    engines: { node: '>= 6.0.0' }
-    dev: true
-
   /aproba/2.0.0:
     resolution:
       {
@@ -4544,16 +4534,6 @@ packages:
       esprima: 4.0.1
       has-own-prop: 2.0.0
       repeat-string: 1.6.1
-    dev: true
-
-  /commitlint-config-cz/0.13.3:
-    resolution:
-      {
-        integrity: sha512-6LmCvGiFDTVSmLF0mzVVp1etMM8lAqLmPRlU7Oml1J8J9oOLadf+2g4uMTchdxOvvYLgll99SESFUHgmc6oATA==,
-      }
-    dependencies:
-      app-root-path: 3.0.0
-      lodash.clonedeep: 4.5.0
     dev: true
 
   /common-ancestor-path/1.0.1:
@@ -8274,13 +8254,6 @@ packages:
     resolution:
       {
         integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==,
-      }
-    dev: true
-
-  /lodash.clonedeep/4.5.0:
-    resolution:
-      {
-        integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==,
       }
     dev: true
 

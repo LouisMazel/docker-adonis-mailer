@@ -1,21 +1,17 @@
 // @ts-check
-const types = require('commitlint-config-cz/lib/types')()
 
 module.exports = {
-  types: types.map((type) => {
-    console.log('types', types)
-    const base = { type, hidden: false }
-    if (type === 'feat') return { ...base, section: '✨ Features' }
-    if (type === 'fix') return { ...base, section: '💊 Bug Fixes' }
-    if (type === 'docs') return { ...base, section: '📝 Documentation' }
-    if (type === 'test') return { ...base, section: '✅ Testing' }
-    if (type === 'refactor') return { ...base, section: '♻️ Code Refactoring' }
-    if (type === 'chore') return { ...base, section: '🚚 Chores' }
-    if (type === 'perf') return { ...base, section: '⚡️ Performance Improvements' }
-    if (type === 'build') return { ...base, section: '🛠 Build' }
-    if (type === 'style') return { ...base, section: '💄 Styling' }
-    return { ...base, hidden: true }
-  }),
+  types: [
+    { type: 'feat', section: '✨ Features', hidden: false },
+    { type: 'fix', section: '💊 Bug Fixes', hidden: false },
+    { type: 'docs', section: '📝 Documentation', hidden: false },
+    { type: 'test', section: '✅ Testing', hidden: false },
+    { type: 'refactor', section: '♻️ Code Refactoring', hidden: false },
+    { type: 'chore', section: '🚚 Chores', hidden: false },
+    { type: 'perf', section: '⚡️ Performance Improvements', hidden: false },
+    { type: 'build', section: '🛠 Build', hidden: false },
+    { type: 'style', section: '💄 Styling', hidden: false },
+  ],
   scripts: {
     pretag: 'CURR_TAG=$(cat package.json | jq -r .version); git tag -d $CURR_TAG; exit 0',
   },
