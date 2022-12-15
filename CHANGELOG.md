@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.1.8 (2022-12-15)</small>
+
+- refactor: dockerfile volume declaration ([3e5f61e](https://github.com/LouisMazel/docker-adonis-mailer/commit/3e5f61e))
+- chore: edit changelog ([9e39323](https://github.com/LouisMazel/docker-adonis-mailer/commit/9e39323))
+- chore: remove package script ([d63880c](https://github.com/LouisMazel/docker-adonis-mailer/commit/d63880c))
+
+## <small>0.1.8 (2022-12-15)</small>
+
+- refactor: dockerfile volume declaration ([3e5f61e](https://github.com/LouisMazel/docker-adonis-mailer/commit/3e5f61e))
+- chore: edit changelog ([9e39323](https://github.com/LouisMazel/docker-adonis-mailer/commit/9e39323))
+- chore: remove package script ([d63880c](https://github.com/LouisMazel/docker-adonis-mailer/commit/d63880c))
+
 ## [0.1.7](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.6...v0.1.7) (2022-12-15)
 
 **Note:** Version bump only for package adonis-docker-mailer
