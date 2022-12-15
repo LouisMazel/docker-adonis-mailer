@@ -3,6 +3,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import TransactionalEmail from 'App/Mailers/TransactionalEmail'
 import SendTransactionalEmailValidator from 'App/Validators/SendTransactionalEmailValidator'
+import { MailBody } from 'types'
 
 function isEmptyObject(obj: Record<any, unknown>) {
   return Object.keys(obj).length === 0
@@ -13,7 +14,9 @@ export default class MailerController {
     try {
       Logger.info('Request to send e-mail received')
 
-      const body = await request.validate(SendTransactionalEmailValidator)
+      await request.validate(SendTransactionalEmailValidator)
+
+      const body = request.body() as MailBody
 
       const emailResponse = await new TransactionalEmail(body).send()
 
