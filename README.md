@@ -62,59 +62,23 @@ You should send a `POST` request to `/emails/send`
 
 In development mode: `http://localhost:3333/emails/send`
 
-With this body:
+Request body:
 
-```json
-{
-  "fromEmail": "me@example.com", // required if SENDER_MAIL environment variable is not set
-  "fromName": "Team Example", // optional or equal to SENDER_NAME
-  "toEmail": "user@example.com", // required
-  "toName": "User Name", // optional
-  "replyToEmail": "reply@example.com", // optional or equal to REPLY_TO_MAIL
-  "replyToName": "Team Example", // optional or equal to REPLY_TO_NAME
-  "subject": "Subject of the e-mail", // required
-  "mjml": true, // default true - if false you should provide a template written in HTML in edge file
-  "template": "example" // file name of your e-mail template - required if you use custom template
+```js
+const body = {
+  fromEmail: 'me@example.com', // required if SENDER_MAIL environment variable is not set
+  fromName: 'Team Example', // optional or equal to SENDER_NAME
+  toEmail: 'user@example.com', // required
+  toName: 'User Name', // optional
+  replyToEmail: 'reply@example.com', // optional or equal to REPLY_TO_MAIL
+  replyToName: 'Team Example', // optional or equal to REPLY_TO_NAME
+  subject: 'Subject of the e-mail', // required
+  mjml: true, // default true - if false you should provide a template written in HTML in edge file
+  template: 'example', // file name of your e-mail template - required if you use custom template
 }
 ```
 
-### E-mail templates
-
-#### Custom templates
-
-**Files types and syntax**
-
-Template should be edge files and use the templating syntax of Adonis
-
-Ex: `example.edge`
-
-- [Adonis templating syntax documentation](https://docs.adonisjs.com/guides/views/templating-syntax)
-
-**Provide your templates**
-
-Provide your templates in `docker-compose.yml` volume configuration
-
-```yml
-version: '3.8'
-
-services:
-  mailer:
-    ...
-    volumes:
-      - ./path/to/local/emails/directory:/app/resources/views/emails
-```
-
-**Provide the template to use in body request**
-
-```json
-{
-  ...
-  "template": "example"
-  ...
-}
-```
-
-#### Use the default template
+### Use the default template
 
 To use it, you must not have volume in `docker-compose.yml` and not provide `template` in request body
 
@@ -182,23 +146,52 @@ The default template:
 </mjml>
 ```
 
-**Send request with this body**
+1. Send request with a body like this
 
-```json
-{
-  "title": "Hello World,", // name of the user
-  "logoLink": "https://adonisjs.com/", // link open on logo click
-  "logoSrc": "https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67", // url of your logo
-  "textColor": "#1a1a19", // text color of e-mail
-  "titleColor": "#5a45ff", // title text color
-  "title": "Hello World", // optional - title in e-mail
-  "content": "<p style=\"margin: 0\">Hello World</p>" // content of e-mail, can be written in HTML
+```js
+const body = {
+  title: 'Hello World,', // name of the user
+  logoLink: 'https://adonisjs.com/', // link open on logo click
+  logoSrc: 'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67', // url of your logo
+  textColor: '#1a1a19', // text color of e-mail
+  titleColor: '#5a45ff', // title text color
+  content: '<p style="margin: 0">Hello World</p>', // content of e-mail, can be written in HTML
 }
 ```
 
-**Result**
+2. Result
 
 ![Default Template Example](./assets/img/default-template-example.png)
+
+### Custom templates
+
+Templates should be edge files and use the templating syntax of Adonis ([see default template example](./resources/views/emails/transactional.edge))
+
+[Adonis templating syntax documentation](https://docs.adonisjs.com/guides/views/templating-syntax)
+
+2. Provide your templates
+
+Provide your templates in `docker-compose.yml` volume configuration
+
+```yml
+version: '3.8'
+
+services:
+  mailer:
+    ...
+    volumes:
+      - ./path/to/local/emails/directory:/app/resources/views/emails
+```
+
+3. Provide the template to use in body request
+
+```js
+const body = {
+  ...
+  "template": "example"
+  ...
+}
+```
 
 ---
 
