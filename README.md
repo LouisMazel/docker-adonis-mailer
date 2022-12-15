@@ -1,4 +1,4 @@
-# adonis-docker-mailer
+# docker-adonis-mailer
 
 > Dockerized Adonis application to send e-mails
 
@@ -15,8 +15,6 @@ services:
   mailer:
     restart: always
     image: louismazel/mailer:v1.0.0
-    ports:
-      - 3333:3333
     env_file:
       - .env
     # optional
@@ -33,7 +31,8 @@ services:
 `.env`
 
 ```dosini
-PORT=3333
+PORT=<port> # required
+HOST=<host> # default 0.0.0.0
 
 MAIL_DRIVER=<mail_driver> # required - mailgun or smtp
 
@@ -50,10 +49,10 @@ MAILGUN_DOMAIN=<mailgun_domain> # optional
 MAILGUN_BASE_URL=<mailgun_base_url> # optional
 
 # default value for e-mails - can be set or override in request body
-SENDER_MAIL=<sendar_mail> # optional
-SENDER_NAME=<sendar_name> # optional
-REPLY_TO_MAIL=<sendar_reply_to_mail> # optional
-REPLY_TO_NAME=<sendar_reply_to_name> # optional
+SENDER_MAIL=<sender_mail> # optional
+SENDER_NAME=<sender_name> # optional
+REPLY_TO_MAIL=<reply_to_mail> # optional
+REPLY_TO_NAME=<reply_to_name> # optional
 ```
 
 ### Sending e-mail
@@ -152,7 +151,8 @@ The default template:
 const body = {
   title: 'Hello World,', // name of the user
   logoLink: 'https://adonisjs.com/', // link open on logo click
-  logoSrc: 'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67', // url of your logo
+  logoSrc:
+    'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67', // url of your logo
   textColor: '#1a1a19', // text color of e-mail
   titleColor: '#5a45ff', // title text color
   content: '<p style="margin: 0">E-mail content</p>', // content of e-mail, can be written in HTML

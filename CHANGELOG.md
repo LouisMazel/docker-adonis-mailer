@@ -8,24 +8,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - feat: generic transactional email improvements ([be79a7b](https://github.com/LouisMazel/docker-adonis-mailer/commit/be79a7b))
 - docs: add documentation in README ([c289c3c](https://github.com/LouisMazel/docker-adonis-mailer/commit/c289c3c))
 
-## 1.1.0 (2022-12-15)
-
-- feat: generic transactional email improvements ([be79a7b](https://github.com/LouisMazel/docker-adonis-mailer/commit/be79a7b))
-- docs: add documentation in README ([c289c3c](https://github.com/LouisMazel/docker-adonis-mailer/commit/c289c3c))
-
 ## 1.0.0 (2022-12-15)
 
 - feat: generic transactional email ([19d4f07](https://github.com/LouisMazel/docker-adonis-mailer/commit/19d4f07))
-
-## 1.0.0 (2022-12-15)
-
-- feat: generic transactional email ([19d4f07](https://github.com/LouisMazel/docker-adonis-mailer/commit/19d4f07))
-
-## <small>0.1.8 (2022-12-15)</small>
-
-- refactor: dockerfile volume declaration ([3e5f61e](https://github.com/LouisMazel/docker-adonis-mailer/commit/3e5f61e))
-- chore: edit changelog ([9e39323](https://github.com/LouisMazel/docker-adonis-mailer/commit/9e39323))
-- chore: remove package script ([d63880c](https://github.com/LouisMazel/docker-adonis-mailer/commit/d63880c))
 
 ## <small>0.1.8 (2022-12-15)</small>
 
@@ -35,23 +20,23 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.1.7](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.6...v0.1.7) (2022-12-15)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.6](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.5...v0.1.6) (2022-12-15)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.6](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.5...v0.1.6) (2022-12-15)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.5](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.4...v0.1.5) (2022-12-15)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.5](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.4...v0.1.5) (2022-12-15)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.4](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.3...v0.1.4) (2022-12-14)
 
@@ -79,19 +64,19 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.1.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.1...v0.1.2) (2022-12-14)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.1...v0.1.2) (2022-12-14)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.1](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.0...v0.1.1) (2022-12-14)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## [0.1.1](https://github.com/LouisMazel/docker-adonis-mailer/compare/v0.1.0...v0.1.1) (2022-12-14)
 
-**Note:** Version bump only for package adonis-docker-mailer
+**Note:** Version bump only for package docker-adonis-mailer
 
 ## 0.1.0 (2022-12-14)
 
