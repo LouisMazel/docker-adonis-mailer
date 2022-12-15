@@ -24,7 +24,8 @@ ENV NODE_ENV=production
 ENV PORT=$PORT
 ENV HOST=0.0.0.0
 
-VOLUME ["/app/build/resources/views/emails"]
+VOLUME ["/app/resources/views/emails"]
+
 COPY --chown=node:node ./package*.json ./
 RUN pnpm install --production --ignore-scripts
 COPY --chown=node:node --from=build /app/build .
