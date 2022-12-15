@@ -3,16 +3,17 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import TransactionalEmail from 'App/Mailers/TransactionalEmail'
 import SendTransactionalEmailValidator from 'App/Validators/SendTransactionalEmailValidator'
-import { MailBody } from 'types'
+
+function isEmptyObject(obj: Record<any, unknown>) {
+  return Object.keys(obj).length === 0
+}
 
 export default class MailerController {
   public async sendTransactional({ request, response }: HttpContextContract) {
     try {
       Logger.info('Request to send e-mail received')
 
-      await request.validate(SendTransactionalEmailValidator)
-
-      const body = request.body() as MailBody
+      const body = await request.validate(SendTransactionalEmailValidator)
 
       const emailResponse = await new TransactionalEmail(body).send()
 
@@ -27,7 +28,7 @@ export default class MailerController {
       return response.status(500).json({
         code: 500,
         message: 'Email not sent!',
-        error: error,
+        error: isEmptyObject(error) ? errorMessage : error,
       })
     }
   }
@@ -45,7 +46,7 @@ export default class MailerController {
       return response.status(500).json({
         code: 500,
         message: 'Cannot preview e-mail',
-        error: error,
+        error: isEmptyObject(error) ? errorMessage : error,
       })
     }
   }
