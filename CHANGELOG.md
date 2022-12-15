@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.1.2...v1.2.0) (2022-12-15)
+
+### Features
+
+- add CORS_ORIGIN environment variable ([149eef4](https://github.com/LouisMazel/docker-adonis-mailer/commit/149eef4b3beaff8e4accf5d2730f619ef1aef65e))
+
+# [1.2.0](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.1.2...v1.2.0) (2022-12-15)
+
+### Features
+
+- add CORS_ORIGIN environment variable ([149eef4](https://github.com/LouisMazel/docker-adonis-mailer/commit/149eef4b3beaff8e4accf5d2730f619ef1aef65e))
+
 ## [1.1.2](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.1.1...v1.1.2) (2022-12-15)
 
 ### Bug Fixes
