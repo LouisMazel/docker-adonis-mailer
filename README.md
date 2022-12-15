@@ -68,7 +68,6 @@ Should be a string, examples:
 - `"example-1.com,example-2.com"` - _Allow requests from example-1.com and example-2.com_
 - etc...
 
-**Documentation**
 [Adonis documentation - Allowed origin](https://docs.adonisjs.com/guides/security/cors#allowed-origin)
 
 ### Sending e-mail
