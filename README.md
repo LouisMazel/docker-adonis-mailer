@@ -155,7 +155,7 @@ const body = {
   logoSrc: 'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67', // url of your logo
   textColor: '#1a1a19', // text color of e-mail
   titleColor: '#5a45ff', // title text color
-  content: '<p style="margin: 0">Hello World</p>', // content of e-mail, can be written in HTML
+  content: '<p style="margin: 0">E-mail content</p>', // content of e-mail, can be written in HTML
 }
 ```
 
