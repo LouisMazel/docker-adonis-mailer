@@ -5,3 +5,5 @@ services:
     build:
       context: .
       target: production
+      args:
+        - NODE_IMAGE=node:18-alpine3.15

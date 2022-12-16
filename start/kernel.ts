@@ -9,6 +9,11 @@
 |
 */
 
+import Env from '@ioc:Adonis/Core/Env'
+import Logger from '@ioc:Adonis/Core/Logger'
+
+Logger.info(`CONFIGURATION - CORS_ORIGIN=${Env.get('CORS_ORIGIN') ?? true}`)
+
 import Server from '@ioc:Adonis/Core/Server'
 
 /*
