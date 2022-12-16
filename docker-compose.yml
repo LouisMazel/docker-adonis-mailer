@@ -9,11 +9,15 @@ services:
     build:
       context: .
       target: dependencies
-      args:
-        - NODE_IMAGE=node:18-alpine3.15
     ports:
       - 3333:3333
       - 9229:9229
+    environment:
+      - CORS_ORIGIN="*"
+      - SENDER_MAIL=me@loicmazuel.com
+      - SENDER_NAME="Team EspaceSingulier"
+      - REPLY_TO_MAIL=me@loicmazuel.com
+      - REPLY_TO_NAME="Team EspaceSingulier"
     env_file:
       - .env
     volumes:

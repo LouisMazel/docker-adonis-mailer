@@ -44,7 +44,7 @@ export default class MailerController {
     } catch (error) {
       const errorMessage = error.message ?? error
 
-      Logger.error(`[MailerController](sendTransactional) ${errorMessage}`)
+      Logger.error(`[MailerControllerctio](preview) ${errorMessage}`)
 
       return response.status(500).json({
         code: 500,
