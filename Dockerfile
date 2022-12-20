@@ -27,7 +27,7 @@ ENV HOST=0.0.0.0
 ENV APP_KEY=0TiFrBfnMMnCLiU659a8_zCxxC9AHbZg
 ENV APP_NAME=docker-adonis-mailer
 
-VOLUME ["/app/resources/views/emails"]
+VOLUME ["/app/resources/views/templates"]
 
 COPY --chown=node:node ./package*.json ./
 RUN pnpm install --production --ignore-scripts

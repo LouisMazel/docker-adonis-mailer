@@ -21,7 +21,9 @@ export default class TransactionalEmail extends BaseMailer {
   }
 
   public async getHtml() {
-    const template = `emails/${this.options.template ?? 'transactional'}`
+    const template = this.options.template
+      ? `templates/${this.options.template}`
+      : `emails/transactional`
 
     const render = await View.render(template, this.options)
 
