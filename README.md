@@ -21,7 +21,7 @@ services:
       - .env
     # optional
     volumes:
-      - ./src/emails:/app/resources/views/emails
+      - ./src/emails:/app/resources/views/templates
 ```
 
 ### Environment variables file
@@ -210,7 +210,7 @@ services:
   mailer:
     ...
     volumes:
-      - ./path/to/local/emails/directory:/app/resources/views/emails
+      - ./path/to/local/emails/directory:/app/resources/views/templates
 ```
 
 3. Provide the template to use in body request
@@ -218,7 +218,7 @@ services:
 ```js
 const body = {
   ...
-  "template": "example"
+  "template": "example" // is the file name - Ex: example.edge
   ...
 }
 ```
