@@ -32,7 +32,7 @@ services:
 PORT=<port> # required
 HOST=<host> # default 0.0.0.0
 
-CORS_ORIGIN="*" # optional - string only - if not provided, only the current origin where the image is running is allowed
+CORS_ORIGIN=<allowed_cors_origin> # optional - string only - if not provided, only the current origin where the image is running is allowed
 
 MAIL_DRIVER=<mail_driver> # required - mailgun or smtp
 
@@ -62,10 +62,10 @@ This property controls [the Access-Control-Allow-Origin](https://developer.mozil
 
 Should be a string, examples:
 
-- `"*"` - _Allow all origin_
-- `"*.example.com"` - _Allow all subdomain of example.com_
-- `"example.com"` - _Allow only requests from exemple.com_
-- `"example-1.com,example-2.com"` - _Allow requests from example-1.com and example-2.com_
+- `*` - _Allow all origin_
+- `*.example.com` - _Allow all subdomain of example.com_
+- `example.com` - _Allow only requests from exemple.com_
+- `example-1.com,example-2.com` - _Allow requests from example-1.com and example-2.com_
 - etc...
 
 [Adonis documentation - Allowed origin](https://docs.adonisjs.com/guides/security/cors#allowed-origin)
