@@ -15,9 +15,9 @@ services:
     environment:
       - CORS_ORIGIN=*
       - SENDER_MAIL=me@loicmazuel.com
-      - SENDER_NAME="Team EspaceSingulier"
+      - SENDER_NAME="Team Maz"
       - REPLY_TO_MAIL=me@loicmazuel.com
-      - REPLY_TO_NAME="Team EspaceSingulier"
+      - REPLY_TO_NAME="Team Maz"
     env_file:
       - .env
     volumes:

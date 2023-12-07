@@ -1,14 +1,20 @@
 {
-  "packages": ["."],
   "loglevel": "verbose",
-  "yes": false,
+  "version": "1.2.4",
   "command": {
     "version": {
-      "allowBranch": ["main"],
-      "message": "chore: bump version to %s",
-      "conventionalCommits": true
+      "allowBranch": ["master"],
+      "message": "chore(release): bump version %v",
+      "conventionalCommits": true,
+      "forceGitTag": false,
+      "changelog": false,
+      "yes": false,
+      "push": false,
+      "gitTagVersion": false,
+      "tagVersionPrefix": "v",
+      "commitHooks": true
     }
   },
-  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "1.2.4"
+  "npmClient": "pnpm",
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }

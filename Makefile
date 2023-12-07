@@ -28,7 +28,8 @@ check-update: ## check dependencies updates
 	pnpm update --interactive --latest
 
 release: ## check dependencies updates
-	pnpm lerna:version $(type)
+	pnpm release:bump-version $(type)
+	pnpm release:changelogen
 
 # DOCKER
 

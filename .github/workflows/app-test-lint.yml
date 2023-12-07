@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      - "release/**"
+      - 'release/**'
 
 jobs:
   app-test-lint:
@@ -16,11 +16,11 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: '16'
 
       - uses: actions/cache@v3
         with:
-          path: "**/node_modules"
+          path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.json') }}
 
       - name: Install pnpm
