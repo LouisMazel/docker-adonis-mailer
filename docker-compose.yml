@@ -13,7 +13,7 @@ services:
       - 3333:3333
       - 9229:9229
     environment:
-      - CORS_ORIGIN="*"
+      - CORS_ORIGIN=*
       - SENDER_MAIL=me@loicmazuel.com
       - SENDER_NAME="Team EspaceSingulier"
       - REPLY_TO_MAIL=me@loicmazuel.com
