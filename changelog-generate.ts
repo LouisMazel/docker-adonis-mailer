@@ -29,11 +29,19 @@ async function updateChangelog() {
 
   const newTag = `v${version.trim()}`
 
+  await execPromise(`git tag ${newTag}`)
+  await execPromise(`git push origin ${newTag}`)
+
+  console.log()
+  console.log('Tag pushed to GitHub.')
+  console.log()
+
   const config = await loadChangelogConfig(process.cwd(), {
     from: previousTagTrimed,
     to: newTag,
   })
 
+  // console.log('OKOKOK', config)
   const rawCommits = await getGitDiff(previousTagTrimed, newTag)
   const commits = parseCommits(rawCommits, config).filter((commit) => {
     return (
@@ -88,13 +96,6 @@ async function updateChangelog() {
 
     console.log()
     console.log('Release pushed to GitHub.')
-    console.log()
-
-    await execPromise(`git tag ${newTag}`)
-    await execPromise(`git push origin ${newTag}`)
-
-    console.log()
-    console.log('Tag pushed to GitHub.')
     console.log()
   } catch (error: any) {
     console.error('error', error)

@@ -1,5 +1,25 @@
 # Change Log
 
+## v1.2.4...v1.2.5
+
+[compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.4...v1.2.5)
+
+### 💅 Refactors
+
+- Update README ([c1e9ae1](https://github.com/LouisMazel/docker-adonis-mailer/commit/c1e9ae1))
+
+### 🏡 Chore
+
+- Add changelogen dependency to generate changelog ([8f81250](https://github.com/LouisMazel/docker-adonis-mailer/commit/8f81250))
+- Upgrade dependencies ([daaa9c8](https://github.com/LouisMazel/docker-adonis-mailer/commit/daaa9c8))
+- Add packages to lerna config ([e5ce61d](https://github.com/LouisMazel/docker-adonis-mailer/commit/e5ce61d))
+- Add 'main' branch to lerna version ([3442c8d](https://github.com/LouisMazel/docker-adonis-mailer/commit/3442c8d))
+
+### ❤️ Contributors
+
+- LouisMazel <me@loicmazuel.com>
+- Mazel <mazuel.loic@gmail.com>
+
 ## [1.2.4](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.3...v1.2.4) (2022-12-20)
 
 **Note:** Version bump only for package docker-adonis-mailer
