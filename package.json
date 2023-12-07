@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
+    "test": "node ace test",
     "start": "node server.js",
     "lint": "cross-env NODE_ENV=production eslint . --ext=.ts",
     "format": "prettier --write .",
-    "lerna:version": "npx lerna version",
+    "release": "pnpm release:bump-version && pnpm release:changelogen",
+    "release:bump-version": "lerna version",
+    "release:changelogen": "ts-node ./changelog-generate.ts",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
@@ -21,11 +24,12 @@
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@japa/preset-adonis": "^1.2.0",
-    "@japa/runner": "^2.2.2",
+    "@japa/runner": "^2.5.1",
     "@types/mjml": "^4.7.4",
     "@types/proxy-addr": "^2.0.3",
     "@types/source-map-support": "^0.5.10",
     "adonis-preset-ts": "^2.1.0",
+    "changelogen": "^0.5.5",
     "cross-env": "^7.0.3",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
@@ -42,13 +46,14 @@
   "dependencies": {
     "@adonisjs/core": "^5.8.0",
     "@adonisjs/mail": "^8.2.1",
-    "@adonisjs/repl": "^3.1.0",
+    "@adonisjs/repl": "3.1.11",
     "@adonisjs/view": "^6.2.0",
     "mjml": "^4.14.1",
-    "pino-pretty": "^9.1.1",
+    "pino-pretty": "^10.2.3",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.14",
-    "source-map-support": "^0.5.21"
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.1"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -57,32 +62,5 @@
         "openapi-types"
       ]
     }
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:adonis/typescriptApp",
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error"
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "build"
-  ],
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true,
-    "useTabs": false,
-    "quoteProps": "consistent",
-    "bracketSpacing": true,
-    "arrowParens": "always",
-    "printWidth": 100
   }
 }
