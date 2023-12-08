@@ -1,24 +1,26 @@
 ARG NODE_IMAGE=node:18-alpine3.15
 
 FROM $NODE_IMAGE AS base
-RUN apk --no-cache add dumb-init
-RUN mkdir -p /app && chown node:node /app
+
+RUN apk add --no-cache python3 g++ make
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+# RUN apk --no-cache add dumb-init
+# RUN mkdir -p /app && chown node:node /app
 
 WORKDIR /app
 
-RUN npm install -g pnpm
-USER node
-RUN mkdir tmp
-
-FROM base AS dependencies
+FROM base AS installer
 COPY --chown=node:node ./package*.json ./
-RUN pnpm install --ignore-scripts
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts
 COPY --chown=node:node . .
 
-FROM dependencies AS build
+FROM installer AS builder
 RUN node ace build --production
 
-FROM base AS production
+FROM installer AS production
 
 ENV NODE_ENV=production
 ENV DRIVE_DISK=local
