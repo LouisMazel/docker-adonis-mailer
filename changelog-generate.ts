@@ -23,8 +23,9 @@ async function execPromise(command: string): Promise<{ stdout: string; stderr: s
 }
 
 async function updateChangelog() {
-  // const { stdout: penultimateTag } = await execPromise("git tag --sort=-v:refname | sed -n '2p'")
+  // const { stdout: previousTag } = await execPromise("git tag --sort=-v:refname | sed -n '2p'")
   const { stdout: previousTag } = await execPromise("git tag --sort=-v:refname | sed -n '1p'")
+
   const previousTagTrimed = previousTag.trim()
 
   const newTag = `v${version.trim()}`
@@ -41,7 +42,6 @@ async function updateChangelog() {
     to: newTag,
   })
 
-  // console.log('OKOKOK', config)
   const rawCommits = await getGitDiff(previousTagTrimed, newTag)
   const commits = parseCommits(rawCommits, config).filter((commit) => {
     return (
@@ -89,13 +89,17 @@ async function updateChangelog() {
   await execPromise(`git push origin HEAD`)
 
   try {
-    await syncGithubRelease(config, {
+    const { status, error } = await syncGithubRelease(config, {
       version: newTag.replace('v', ''),
       body: changelogWithoutTitle,
     })
 
+    if (error) {
+      throw error
+    }
+
     console.log()
-    console.log('Release pushed to GitHub.')
+    console.log('Release pushed to GitHub - Release status:', status)
     console.log()
   } catch (error: any) {
     console.error('error', error)

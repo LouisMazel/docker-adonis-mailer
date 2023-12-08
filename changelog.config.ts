@@ -44,7 +44,7 @@ export const config = {
   output: 'CHANGELOG.md',
   repo: {
     provider: 'github',
-    repo: 'LouisMazel/maz-ui',
+    repo: 'LouisMazel/docker-adonis-mailer',
     domain: 'github.com',
     token: process.env.GITHUB_TOKEN,
   },
