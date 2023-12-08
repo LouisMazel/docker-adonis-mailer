@@ -1,5 +1,17 @@
 # Change Log
 
+## v1.2.5...v1.2.6
+
+[compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.5...v1.2.6)
+
+### 🏡 Chore
+
+- Edit changelog script ([c0f6652](https://github.com/LouisMazel/docker-adonis-mailer/commit/c0f6652))
+
+### ❤️ Contributors
+
+- LouisMazel <me@loicmazuel.com>
+
 ## v1.2.4...v1.2.5
 
 [compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.4...v1.2.5)
