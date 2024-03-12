@@ -48,6 +48,8 @@ RUN pnpm install --production --ignore-scripts
 
 COPY --chown=node:node --from=builder /app/build ./
 
+RUN ls .
+
 EXPOSE $PORT
 
 CMD ["dumb-init", "node", "server.js"]
