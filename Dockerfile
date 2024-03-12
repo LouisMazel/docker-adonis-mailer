@@ -13,7 +13,8 @@ RUN corepack enable
 WORKDIR /app
 
 FROM base AS installer
-COPY --chown=node:node ./package*.json ./
+COPY --chown=node:node ./package.json ./
+COPY --chown=node:node ./pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts
 COPY --chown=node:node . .
 
