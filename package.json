@@ -6,7 +6,7 @@
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
     "test": "node ace test",
-    "start": "node server.js",
+    "start": "node build/server.js",
     "lint": "cross-env NODE_ENV=production eslint . --ext=.ts",
     "format": "prettier --write .",
     "release": "pnpm release:bump-version && pnpm release:changelogen",

@@ -14,7 +14,7 @@ version: '3.8'
 services:
   mailer:
     restart: always
-    image: louismazel/mailer:latest # it's better to fix the version - louismazel/mailer:v1.2.4
+    image: louismazel/mailer:latest # it's better to fix the version - louismazel/mailer:v1.2.9
     ports:
       - 3333:3333 # or PORT choosen
     env_file:
@@ -28,7 +28,7 @@ services:
 
 `.env`
 
-```dosini
+```env
 PORT=<port> # required
 HOST=<host> # default 0.0.0.0
 

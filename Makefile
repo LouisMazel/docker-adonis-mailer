@@ -34,38 +34,38 @@ release: ## check dependencies updates
 # DOCKER
 
 docker-install: ## install dependencies in container
-	docker-compose run mailer pnpm install
+	docker compose run mailer pnpm install
 
 docker-up: ## run container
-	docker-compose up --remove-orphans -d
+	docker compose up --remove-orphans -d
 
 docker-up-build: ## run and build docker
-	docker-compose up --build --remove-orphans -d
+	docker compose up --build --remove-orphans -d
 
 docker-build: ## build docker for dev
-	docker-compose build
+	docker compose build
 
 docker-build-prod: ## build docker for prod
-	docker-compose -f docker-compose.prod.yml build
+	docker compose -f docker-compose.prod.yml build
 
 docker-start: ## init docker container
 	make docker-install docker-up-build
 
 docker-stop: ## stop container
-	docker-compose stop
+	docker compose stop
 
 docker-logs: ## see logs in docker container
-	docker-compose logs -f mailer
+	docker compose logs -f mailer
 
 docker-down: ## stops containers and removes containers, networks, volumes, and images created by up.
-	docker-compose down --remove-orphans
+	docker compose down --remove-orphans
 
 docker-deploy: ## deploy docker image to docker hub
 	docker tag mailer_mailer louismazel/mailer:$(tagname)
 	docker push louismazel/mailer:$(tagname)
 
 docker-clean: ## remove all container and images
-	docker-compose down
+	docker compose down
 	docker system prune --volumes -af
 
 help:

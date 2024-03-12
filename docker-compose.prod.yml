@@ -1,7 +1,8 @@
 version: '3.8'
 
 services:
-  api:
+  mailer:
+    container_name: mailer
     build:
       context: .
       target: production

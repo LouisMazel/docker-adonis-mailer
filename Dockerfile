@@ -1,5 +1,7 @@
 ARG NODE_IMAGE=node:21-alpine
 
+################## First Stage - Creating base #########################
+
 FROM $NODE_IMAGE AS base
 
 RUN apk add --no-cache python3 g++ make
@@ -12,16 +14,24 @@ RUN mkdir -p /app && chown node:node /app
 
 WORKDIR /app
 
+USER node
+
+################## Second Stage - Installing dependencies #########################
+
 FROM base AS installer
 COPY --chown=node:node ./package.json ./
 COPY --chown=node:node ./pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts
-COPY --chown=node:node . .
+COPY --chown=node:node . ./
+
+################## Third Stage - Building Stage #########################
 
 FROM installer AS builder
 RUN node ace build --production
 
-FROM installer AS production
+################## Final Stage - Production #########################
+
+FROM base AS production
 
 ENV NODE_ENV=production
 ENV DRIVE_DISK=local
@@ -33,7 +43,11 @@ ENV APP_NAME=docker-adonis-mailer
 VOLUME ["/app/resources/views/templates"]
 
 COPY --chown=node:node ./package*.json ./
+
 RUN pnpm install --production --ignore-scripts
-COPY --chown=node:node --from=builder /app/build .
+
+COPY --chown=node:node --from=builder /app/build ./
+
 EXPOSE $PORT
-CMD [ "dumb-init", "node", "server.js" ]
+
+CMD ["dumb-init", "node", "server.js"]

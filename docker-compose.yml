@@ -1,11 +1,12 @@
 version: '3.8'
 
 services:
-  api:
+  mailer:
     restart: always
     extends:
       file: docker-compose.prod.yml
-      service: api
+      service: mailer
+    container_name: mailer
     build:
       context: .
       target: installer
