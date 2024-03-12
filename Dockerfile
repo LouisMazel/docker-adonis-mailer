@@ -1,4 +1,4 @@
-ARG NODE_IMAGE=node:20-alpine
+ARG NODE_IMAGE=node:21-alpine
 
 FROM $NODE_IMAGE AS base
 
@@ -33,6 +33,6 @@ VOLUME ["/app/resources/views/templates"]
 
 COPY --chown=node:node ./package*.json ./
 RUN pnpm install --production --ignore-scripts
-COPY --chown=node:node --from=build /app/build .
+COPY --chown=node:node --from=builder /app/build .
 EXPOSE $PORT
 CMD [ "dumb-init", "node", "server.js" ]
