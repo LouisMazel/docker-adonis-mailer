@@ -89,17 +89,19 @@ async function updateChangelog() {
   await execPromise(`git push origin HEAD`)
 
   try {
-    const { status, error } = await syncGithubRelease(config, {
+    const response = await syncGithubRelease(config, {
       version: newTag.replace('v', ''),
       body: changelogWithoutTitle,
     })
 
-    if (error) {
-      throw error
+    console.log('response', response)
+
+    if (response.error) {
+      throw response.error
     }
 
     console.log()
-    console.log('Release pushed to GitHub - Release status:', status)
+    console.log('Release pushed to GitHub - Release status:', response.status)
     console.log()
   } catch (error: any) {
     console.error('error', error)

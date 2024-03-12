@@ -1,5 +1,25 @@
 # Change Log
 
+## v1.2.7...v1.2.8
+
+[compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.7...v1.2.8)
+
+### 📖 Documentation
+
+- Update README ([c512c0d](https://github.com/LouisMazel/docker-adonis-mailer/commit/c512c0d))
+
+### 🏡 Chore
+
+- Re-add dumb-init from dependencies in docker image ([fd9ef96](https://github.com/LouisMazel/docker-adonis-mailer/commit/fd9ef96))
+
+### 🤖 CI
+
+- Publish new version only when release is pushed ([38fb7e6](https://github.com/LouisMazel/docker-adonis-mailer/commit/38fb7e6))
+
+### ❤️ Contributors
+
+- LouisMazel <me@loicmazuel.com>
+
 ## v1.2.6...v1.2.7
 
 [compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.6...v1.2.7)
