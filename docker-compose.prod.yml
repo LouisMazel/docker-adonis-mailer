@@ -6,4 +6,4 @@ services:
       context: .
       target: production
       args:
-        - NODE_IMAGE=node:20-alpine
+        - NODE_IMAGE=node:21-alpine
