@@ -173,19 +173,23 @@ The default template:
 
 ```js
 const body = {
-  // Title in the e-mail
+  /* Title in the e-mail */
   title: 'Hello World,',
-  // link open on logo click
+  /* link open on logo click */
   logoLink: 'https://adonisjs.com/',
-  // URL of the logo
+  /* URL of the logo */
   logoSrc:
     'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67',
-  // text color of e-mail
+  /* text color of e-mail */
   textColor: '#1a1a19',
-  // title text color
+  /* title text color */
   titleColor: '#5a45ff',
-  // content of e-mail, can be written in HTML
+  /* content of e-mail, can be written in HTML */
   content: '<p style="margin: 0">E-mail content</p>',
+  /* content of e-mail, can be written in HTML */
+  subject: 'Welcome',
+  /* content of e-mail, can be written in HTML */
+  toEmail: 'example@site.com',
 }
 ```
 
@@ -199,7 +203,7 @@ Templates should be edge files and use the templating syntax of Adonis ([see def
 
 [Adonis templating syntax documentation](https://docs.adonisjs.com/guides/views/templating-syntax)
 
-2. Provide your templates
+3. Provide your templates
 
 Provide your templates in `docker-compose.yml` volume configuration
 
@@ -213,7 +217,7 @@ services:
       - ./path/to/local/emails/directory:/app/resources/views/templates
 ```
 
-3. Provide the template to use in body request
+4. Provide the template to use in body request
 
 ```js
 const body = {

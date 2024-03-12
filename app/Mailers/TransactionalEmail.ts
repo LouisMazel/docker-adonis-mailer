@@ -21,13 +21,23 @@ export default class TransactionalEmail extends BaseMailer {
   }
 
   public async getHtml() {
-    const template = this.options.template
-      ? `templates/${this.options.template}`
-      : `emails/transactional`
+    try {
+      const template = this.options.template
+        ? `templates/${this.options.template}`
+        : `emails/transactional`
 
-    const render = await View.render(template, this.options)
+      const render = await View.render(template, this.options)
 
-    return this.options.mjml ? mjml(render).html : render
+      const html = this.options.mjml ? mjml(render).html : render
+
+      Logger.info(`[TransactionalEmail](getHtml) email rendered successfully`)
+
+      return html
+    } catch (error) {
+      Logger.error(`[TransactionalEmail](getHtml) ${error.message ?? error}`)
+
+      throw error
+    }
   }
 
   public async prepare(message: MessageContract) {
@@ -53,6 +63,8 @@ export default class TransactionalEmail extends BaseMailer {
       if (replyToEmail) {
         email.replyTo(replyToEmail, replyToName)
       }
+
+      Logger.info(`[TransactionalEmail](prepare) email prepared successfully`)
 
       return email.html(html)
     } catch (error) {

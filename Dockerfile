@@ -1,24 +1,27 @@
-ARG NODE_IMAGE=node:18-alpine3.15
+ARG NODE_IMAGE=node:21-alpine
 
 FROM $NODE_IMAGE AS base
-RUN apk --no-cache add dumb-init
-RUN mkdir -p /app && chown node:node /app
+
+RUN apk add --no-cache python3 g++ make
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+# RUN apk --no-cache add dumb-init
+# RUN mkdir -p /app && chown node:node /app
 
 WORKDIR /app
 
-RUN npm install -g pnpm
-USER node
-RUN mkdir tmp
-
-FROM base AS dependencies
-COPY --chown=node:node ./package*.json ./
-RUN pnpm install --ignore-scripts
+FROM base AS installer
+COPY --chown=node:node ./package.json ./
+COPY --chown=node:node ./pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts
 COPY --chown=node:node . .
 
-FROM dependencies AS build
+FROM installer AS builder
 RUN node ace build --production
 
-FROM base AS production
+FROM installer AS production
 
 ENV NODE_ENV=production
 ENV DRIVE_DISK=local
@@ -31,6 +34,6 @@ VOLUME ["/app/resources/views/templates"]
 
 COPY --chown=node:node ./package*.json ./
 RUN pnpm install --production --ignore-scripts
-COPY --chown=node:node --from=build /app/build .
+COPY --chown=node:node --from=builder /app/build .
 EXPOSE $PORT
 CMD [ "dumb-init", "node", "server.js" ]
