@@ -78,26 +78,26 @@ In development mode: `http://localhost:3333/emails/send`
 
 Request body:
 
-```js
-const body = {
+```json
+{
   // required if SENDER_MAIL environment variable is not set
-  fromEmail: 'me@example.com',
+  "fromEmail": "me@example.com",
   // optional or equal to SENDER_NAME
-  fromName: 'Team Example',
+  "fromName": "Team Example",
   // required
-  toEmail: 'user@example.com',
+  "toEmail": "user@example.com",
   // optional
-  toName: 'User Name',
+  "toName": "User Name",
   // optional or equal to REPLY_TO_MAIL
-  replyToEmail: 'reply@example.com',
+  "replyToEmail": "reply@example.com",
   // optional or equal to REPLY_TO_NAME
-  replyToName: 'Team Example',
+  "replyToName": "Team Example",
   // required
-  subject: 'Subject of the e-mail',
+  "subject": "Subject of the e-mail",
   // default true - if false you should provide a template written in HTML in edge file
-  mjml: true,
+  "mjml": true,
   // file name of your e-mail template - required if you use custom template
-  template: 'example',
+  "template": "example"
 }
 ```
 
@@ -171,25 +171,25 @@ The default template:
 
 1. Send request with a body like this
 
-```js
-const body = {
-  /* Title in the e-mail */
-  title: 'Hello World,',
-  /* link open on logo click */
-  logoLink: 'https://adonisjs.com/',
-  /* URL of the logo */
-  logoSrc:
-    'https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67',
-  /* text color of e-mail */
-  textColor: '#1a1a19',
-  /* title text color */
-  titleColor: '#5a45ff',
-  /* content of e-mail, can be written in HTML */
-  content: '<p style="margin: 0">E-mail content</p>',
-  /* content of e-mail, can be written in HTML */
-  subject: 'Welcome',
-  /* content of e-mail, can be written in HTML */
-  toEmail: 'example@site.com',
+```json
+{
+  // Title in the e-mail
+  "title": "Hello World,",
+  // link open on logo click
+  "logoLink": "https://adonisjs.com/",
+  // URL of the logo
+  "logoSrc":
+    "https://camo.githubusercontent.com/076aacc894daf3d9065f7d5bd1d7e8a3d0511668576cd66afddd0ce4af524eaa/68747470733a2f2f692e696d6775722e636f6d2f32774764454a4e2e706e67",
+  // text color of e-mail
+  "textColor": "#1a1a19",
+  // title text color
+  "titleColor": "#5a45ff",
+  // content of e-mail, can be written in HTML
+  "content": "<p style="margin: 0">E-mail content</p>",
+  // content of e-mail, can be written in HTML
+  "subject": "Welcome",
+  // content of e-mail, can be written in HTML
+  "toEmail": "example@site.com",
 }
 ```
 
@@ -219,10 +219,11 @@ services:
 
 4. Provide the template to use in body request
 
-```js
-const body = {
+```json
+{
   ...
-  "template": "example" // is the file name - Ex: example.edge
+  // is the file name - Ex: example.edge
+  "template": "example"
   ...
 }
 ```
