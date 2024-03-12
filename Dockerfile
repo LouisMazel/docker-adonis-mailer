@@ -7,8 +7,8 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-# RUN apk --no-cache add dumb-init
-# RUN mkdir -p /app && chown node:node /app
+RUN apk --no-cache add dumb-init
+RUN mkdir -p /app && chown node:node /app
 
 WORKDIR /app
 
