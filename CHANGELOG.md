@@ -1,5 +1,17 @@
 # Change Log
 
+## v1.2.8...v1.2.9
+
+[compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.8...v1.2.9)
+
+### 🩹 Fixes
+
+- Build error ([28f23de](https://github.com/LouisMazel/docker-adonis-mailer/commit/28f23de))
+
+### ❤️ Contributors
+
+- LouisMazel <me@loicmazuel.com>
+
 ## v1.2.7...v1.2.8
 
 [compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.7...v1.2.8)
