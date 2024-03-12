@@ -1,5 +1,17 @@
 # Change Log
 
+## v1.2.6...v1.2.7
+
+[compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.6...v1.2.7)
+
+### 💅 Refactors
+
+- Improve build and cache during deployment ([#4](https://github.com/LouisMazel/docker-adonis-mailer/pull/4))
+
+### ❤️ Contributors
+
+- Mazel <me@loicmazuel.com>
+
 ## v1.2.5...v1.2.6
 
 [compare changes](https://github.com/LouisMazel/docker-adonis-mailer/compare/v1.2.5...v1.2.6)
